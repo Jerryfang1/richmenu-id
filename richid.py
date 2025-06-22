@@ -16,7 +16,7 @@ def get_all_rich_menus_and_aliases():
         line_bot_api = MessagingApi(api_client)
 
         # 取得所有 Rich Menu
-        richmenus = line_bot_api.get_rich_menu_list().richmenus
+        richmenus = line_bot_api.get_rich_menu_list().rich_menus
         print(f"找到 {len(richmenus)} 個 Rich Menu")
         for rm in richmenus:
             print(f"找到：{rm.rich_menu_id}")
