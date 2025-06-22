@@ -1,0 +1,10 @@
+services:
+  - type: worker
+    name: richmenu-cleaner
+    env: python
+    buildCommand: ""
+    startCommand: python delete_all.py
+    plan: free
+    envVars:
+      - key: LINE_CHANNEL_ACCESS_TOKEN
+        value: ""
