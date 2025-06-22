@@ -3,7 +3,7 @@ services:
     name: richmenu-id
     env: python
     buildCommand: ""
-    startCommand: python delete_all.py
+    startCommand: python richid.py
     plan: free
     envVars:
       - key: LINE_CHANNEL_ACCESS_TOKEN
