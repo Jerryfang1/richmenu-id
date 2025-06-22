@@ -15,16 +15,21 @@ def get_all_rich_menus_and_aliases():
     with ApiClient(configuration) as api_client:
         line_bot_api = MessagingApi(api_client)
 
-        # 取得所有 Rich Menu
-        richmenus = line_bot_api.get_rich_menu_list().rich_menus
+        # ✅ 取得所有 Rich Menu
+        response = line_bot_api.get_rich_menu_list()
+        richmenus = response.richmenus  # ✅ 注意這裡是 richmenus 而不是 rich_menus
         print(f"找到 {len(richmenus)} 個 Rich Menu")
         for rm in richmenus:
-            print(f"找到：{rm.rich_menu_id}")
+            print(f"RichMenu ID：{rm.rich_menu_id}")
 
-        # 取得所有 alias
-        aliases = line_bot_api.get_rich_menu_alias_list().aliases
+        # ✅ 取得所有 alias
+        alias_response = line_bot_api.get_rich_menu_alias_list()
+        aliases = alias_response.aliases
         print(f"找到 {len(aliases)} 個 alias")
         for alias in aliases:
-            print(f"找到 alias：{alias.rich_menu_alias_id}")
+            print(f"Alias ID：{alias.rich_menu_alias_id} -> RichMenu ID：{alias.rich_menu_id}")
 
-        print("已列出所有 Rich Menu 與 alias。")
+        print("✅ 已列出所有 Rich Menu 與 alias。")
+
+if __name__ == "__main__":
+    get_all_rich_menus_and_aliases()
