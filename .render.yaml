@@ -2,7 +2,7 @@ services:
   - type: web
     name: richmenu-id
     env: python
-    buildCommand: ""
+    buildCommand: pip install -r requirements.txt
     startCommand: python richid.py
     plan: free
     envVars:
