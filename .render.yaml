@@ -1,6 +1,6 @@
 services:
   - type: worker
-    name: richmenu-cleaner
+    name: richmenu-id
     env: python
     buildCommand: ""
     startCommand: python delete_all.py
