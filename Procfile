@@ -1,1 +1,1 @@
-worker: python richid.py
+python richid.py
